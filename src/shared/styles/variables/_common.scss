@@ -1,0 +1,15 @@
+:root {
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --font-title: clamp(36px, 5vw, 64px);
+  --font-sub: clamp(12px, 3vw, 18px);
+
+  --max-width: 1240px;
+  --edge: clamp(20px, 5vw, 64px);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+}

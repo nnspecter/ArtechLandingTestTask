@@ -1,0 +1,141 @@
+.productCard {
+  background: var(--surface);
+  border: 1px solid var(--mutedOutline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.productCard:hover,
+.productCard:focus-within {
+  border-color: var(--card-accent);
+  transform: translateY(-4px);
+}
+
+.productCard:hover .productCardGlyph,
+.productCard:focus-within .productCardGlyph {
+  opacity: 0.25;
+  transform: scale(0.94);
+}
+
+.productCard:hover .productCardReadout,
+.productCard:focus-within .productCardReadout {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.productCardMedia {
+  position: relative;
+  aspect-ratio: 4 / 3.4;
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--card-accent) 14%, transparent), transparent 65%),
+    var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.productCardGlyph {
+  width: 46%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.productCardReadout {
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.25) 100%);
+  will-change: transform, opacity;
+}
+
+.productCardReadoutLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+  margin-bottom: 4px;
+}
+
+.productCardSpec {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--mutedOutline);
+  padding-bottom: 6px;
+}
+
+.productCardSpecLabel {
+  font-size: 12.5px;
+  color: var(--titanium-dim);
+}
+
+.productCardSpecValue {
+  font-size: 15px;
+  color: var(--titanium);
+  font-weight: 500;
+}
+
+.productCardSpecUnit {
+  font-size: 11px;
+  color: var(--titanium-dim);
+  margin-left: 3px;
+}
+
+.productCardBody {
+  padding: 22px 22px 24px;
+}
+
+.productCardBody h3 {
+  font-size: 19px;
+  margin: 8px 0 6px;
+}
+
+.productCardBody p {
+  font-size: 13.5px;
+  color: var(--titanium-dim);
+  min-height: 36px;
+}
+
+.productCardCategory {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+}
+
+.productCardFooter {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCardPrice {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.productCardCta {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--hairline);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.productCardCta:hover {
+  border-color: var(--card-accent);
+  background: var(--surface-3);
+}

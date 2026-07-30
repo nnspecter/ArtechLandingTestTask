@@ -1,0 +1,31 @@
+.advantagesCard{
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    padding: 36px 28px;
+    transition: background 0.3s ease;
+    &:hover{
+        background: var(--surface-2);
+    }
+    .advantagesIcon{
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--surface-3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    h3{
+        font-size: calc(var(--font-sub) + 2px);
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+  .advantagesCard{
+    align-items: center;
+    text-align: center;
+  }
+}

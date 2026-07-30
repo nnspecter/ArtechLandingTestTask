@@ -1,0 +1,36 @@
+.page {
+  padding: clamp(100px, 12vw, 140px) var(--edge) 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+.intro {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+
+  .heading {
+    margin: 0 auto;
+  }
+
+  .sub {
+    margin: 16px auto 0;
+    color: var(--textSub);
+  }
+}
+
+.card {
+  max-width: var(--max-width);
+  margin: clamp(40px, 6vw, 56px) auto 0;
+  background: var(--surface);
+  border: 1px solid var(--mutedOutline);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  overflow: hidden;
+  margin-bottom: clamp(60px, 8vw, 100px);
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
+}

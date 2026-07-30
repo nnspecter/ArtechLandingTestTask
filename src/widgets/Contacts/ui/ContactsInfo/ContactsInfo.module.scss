@@ -1,0 +1,79 @@
+.infoSection {
+  background: var(--surface-2);
+  border-left: 1px solid var(--mutedOutline);
+  padding: clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+
+  @media (max-width: 860px) {
+    border-left: none;
+    border-top: 1px solid var(--mutedOutline);
+  }
+}
+
+.infoTitle {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  dt {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+
+  dd {
+    font-size: 14.5px;
+    color: var(--text);
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--mutedOutline);
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: var(--primaryBright);
+      text-decoration-color: var(--primaryBright);
+    }
+  }
+}
+
+.socials {
+  margin-top: auto;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  a {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--mutedOutline);
+    font-size: 12.5px;
+    background: var(--surface);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primaryBright);
+    }
+  }
+}

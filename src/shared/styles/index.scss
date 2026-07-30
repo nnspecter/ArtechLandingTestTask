@@ -1,0 +1,142 @@
+@use "./variables/common";
+@use "./variables/dark";
+@use "./variables/light";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--graphite);
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.section {
+  padding: clamp(64px, 10vw, 128px) var(--edge);
+}
+
+
+.section-title {
+  font-size: calc(var(--font-title) - 10px);
+  color: var(--text);
+}
+
+.section-sub {
+  font-size: var(--font-sub);
+  color: var(--textSub);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #17130f;
+}
+
+.btn-primary:hover {
+  background: var(--primaryBright);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px var(--bloom);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--textSub);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--muted);
+  transform: translateY(-2px);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 1080px) {
+  .section-inner{
+    text-align: center;
+
+  }
+  .section-sub{
+    margin-left: auto;  
+    margin-right: auto;
+  }
+}

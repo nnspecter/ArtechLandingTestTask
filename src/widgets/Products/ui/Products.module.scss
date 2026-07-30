@@ -1,0 +1,39 @@
+.productsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.productsGrid {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.productsGrid > * {
+  /* 4 колонки  */
+  width: calc((100% - 60px) / 4); 
+}
+
+@media (max-width: 1080px) {
+  .productsGrid > * {
+    /* 2 колонки */
+    width: calc((100% - 20px) / 2);
+  }
+  .productsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .productsGrid > * {
+    /* 1 колонка */
+    width: 100%;
+  }
+}
