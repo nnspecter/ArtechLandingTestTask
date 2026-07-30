@@ -1,75 +1,68 @@
-# React + TypeScript + Vite
+# 🚀 ArtTech Landing Page
+Современный, адаптивный и интерактивный лендинг для **ArtTech**, выполненный в качестве тестового задания. Проект разработан с использованием передового стека технологий и архитектурного подхода **FSD (Feature-Sliced Design)**. **[Открыть демо на GitHub Pages](https://nnspecter.github.io/ArtechLandingTestTask/)**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🛠 Технологический стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Сборка:** [Vite](https://vitejs.dev/)
+- **Архитектура:** [Feature-Sliced Design (FSD)](https://feature-sliced.design/)
+- **Стилизация:** SCSS (SASS Modules)
+- **Анимации:** [Framer Motion](https://www.framer.com/motion/)
+- **Качество кода:** ESLint (с кастомными правилами под TS и React)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Ключевые фичи и функционал
 
-## Expanding the ESLint configuration
+- 🎨 **Смена тем (Light / Dark):** Реализована через React Context с сохранением пользовательского выбора в `localStorage` и автоматическим определением системных настроек (`prefers-color-scheme`).
+- 📱 **Полная адаптивность:** Лендинг корректно отображается и отлично работает на любых устройствах (от мобильных телефонов до широкоформатных мониторов).
+- ⚡ **Плавная анимация:** Анимированные появления блоков и интерактивные счетчики при скролле (Framer Motion).
+- 🌐 **Готовность к локализации (i18n):** Архитектура заложена с учетом легкого подключения интернационализации (переключение языков) в будущем.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧱 Структура лендинга
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Header & Footer** — навигация, переключатель темы, контакты и быстрые ссылки.
+2. **Hero Block** — главный экран с эффектной подачей продукта и призывом к действию (CTA).
+3. **Преимущества компании** — ключевые достоинства и метрики ArtTech.
+4. **Популярные товары** — интерактивная витрина с карточками товаров и анимацией характеристик.
+5. **FAQ (Вопросы и ответы)** — аккордеон с интерактивным раскрывающимся списком.
+6. **Отзывы** — блок с оценками и мнением клиентов.
+7. **Форма обратной связи** — форма отправки сообщений + информационная панель с контактами.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 📁 Архитектура (Feature-Sliced Design)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Проект структурирован по методологии FSD:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── app/         # Инициализация приложения, провайдеры (ThemeProvider, styles)
+├── widgets/     # Крупные самостоятельные блоки (Header, Footer, Hero, Products, FAQ...)
+├── features/    # Интерактивные фичи (смена темы, анимация счетчиков...)
+├── entities/    # Бизнес-сущности (карточка товара, отзыв...)
+└── shared/      # Переиспользуемый код (UI-кит, хуки, константы, стили)
 
 ```
+---
+
+## 🛠️ Запуск проекта локально
+
+### Предварительные требования
+Убедитесь, что у вас установлены:
+* **Node.js** (версии 18.x или выше)
+
+### Инструкция по установке и запуску
+ В командной строке поочередно: 
+   ```bash
+   git clone https://github.com/nnspecter/ArtechLandingTestTask
+   cd ArtechLandingTestTask
+   npm i
+   npm run dev
+   ```
+
+   
