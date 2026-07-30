@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
-import ArtTechLogo from '@shared/assets/images/logos/ArtTechDarkLogo.png'
+import ArtTechDarkLogo from '@shared/assets/images/logos/ArtTechDarkLogo.png'
+import ArtTechLightLogo from '@shared/assets/images/logos/ArtTechLogo.png'
+
 import styles from './Hero.module.scss'
+import { useTheme } from '@/app/context/useTheme'
 
 export const Hero = () => {
+  const{theme} = useTheme();
+
+  const ArtTechLogo = theme === "dark" ? ArtTechDarkLogo : ArtTechLightLogo;
   return (
     <section className={styles.hero} id="top">
       <div className={`${styles.heroInner} section-inner`}>

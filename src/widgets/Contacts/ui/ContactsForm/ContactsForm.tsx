@@ -97,7 +97,7 @@ export const ContactForm = () => {
 
           {error && <span className={styles.errorText}>{error}</span>}
 
-          <button type="submit" className={`btn ${styles.submit}`}>
+          <button type="submit" className={`btn btn-primary ${styles.submit}`}>
             Отправить сообщение
           </button>
         </form>
