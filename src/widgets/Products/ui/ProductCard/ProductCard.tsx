@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './ProductCard.module.scss'
 import { useCountUp } from '@/features/countUpAnim/countUpAnim'
-import type { Product } from '../../data/productsData'
+import type { Product, ProductSpec } from '../../data/productsData'
 
 //Отдельно выделил каждую линию чтоб переиспользовать)
-const SpecRow = ({ spec, active }: { spec: any; active: boolean }) => {
+const SpecRow = ({ spec, active }: { spec: ProductSpec; active: boolean }) => {
   const value = useCountUp(spec.value, active, spec.decimals)
   
   return (
@@ -45,7 +45,7 @@ export const ProductCard = ({ product, index }: { product: Product; index: numbe
 
         <div className={styles.productCardReadout}>
           <span className={styles.productCardReadoutLabel}>Диагностика</span>
-          {product.specs.map((spec: any) => (
+          {product.specs.map((spec) => (
             <SpecRow key={spec.label} spec={spec} active={isHovered} />
           ))}
         </div>

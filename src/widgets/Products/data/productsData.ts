@@ -3,7 +3,7 @@ import AirCharge from '@shared/assets/images/ShopItems/AirCharge.png'
 import ChillMountFin from '@shared/assets/images/ShopItems/ChillMountFin.png'
 import VoltSocket from '@shared/assets/images/ShopItems/VoltSocket.png'
 
-interface ProductSpec {
+export interface ProductSpec {
   label: string
   value: number
   unit: string
