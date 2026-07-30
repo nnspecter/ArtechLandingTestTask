@@ -1,10 +1,10 @@
 import React from 'react';
 import { LuSun, LuMoon } from 'react-icons/lu';
 import styles from './ThemeToggle.module.scss';
-import { useThemeContext } from '@/app/context/ThemeProvider';
+import { useTheme } from '@/app/context/useTheme';
 
 export const ThemeToggle: React.FC = () => {
-  const { theme, toggleTheme } = useThemeContext();
+  const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
   return (
